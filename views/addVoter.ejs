@@ -1,0 +1,45 @@
+<%-include('./includes/header') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mx-auto mt-4">
+           <div class="card shadow">
+            <div class="card-header bg-primary">
+                <h3 class="text-light">Add New Voter</h3>
+            </div>
+            <div class="card-body p-4">
+                <form action="/addVoter" method="post" id="add-form" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="document">Document</label>
+                        <input type="file" name="document" class="form-control form-control-lg" required/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" class="form-control form-control-lg" required/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mobile">Mobile</label>
+                        <input type="tel" name="mobile" class="form-control form-control-lg"  required/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fingerprint">FingerPrint</label>
+                        <input type="file" name="fingerprint" class="form-control form-control-lg" required/>
+                    </div>
+                <div class="mb-3">
+                    <label for="status">Status</label>
+                    <select name="status" id="status" class="form-control form-control-lg" required>
+                        <option value="active">Active</option>
+                        <option value="inactive">InActive</option>
+                    </select>
+                </div>
+                <div class="mb-3 d-grid">
+                    <input type="submit" name="submit" value="Add Voter" class="btn btn-primary btn-lg">
+                </div>
+                </form>
+            </div>
+           </div>
+            
+        </div>
+    </div>
+</div>
+<%- include('./includes/footer') %>

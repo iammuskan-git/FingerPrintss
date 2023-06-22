@@ -1,0 +1,50 @@
+<%- include('./includes/header') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mx-auto mt-4">
+           <div class="card shadow">
+            <div class="card-header bg-success">
+                <h3 class="text-light">Edit Voter (<%= user.id %>) </h3>
+            </div>
+            <div class="card-body p-4">
+                <form action="/updatesss/<%= user.id %>" method="post" id="add-form" enctype="multipart/form-data">
+                    
+                    <div class="mb-3">
+                        <label for="document">Document</label>
+                        <input type="file" name="document" class="form-control form-control-lg"/>
+                        <img src="/<%= user.document %>" width="100" class="img-thumbnail mt-1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email">Email</label>
+                        <input type="email" name="email"  class="form-control form-control-lg" value="<%= user.email %>" required/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mobile">Mobile</label>
+                        <input type="tel" name="mobile" class="form-control form-control-lg" value=" <%= user.mobile %>" required/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fingerprint">FingerPrint</label>   
+                        <input type="file" name="fingerprint"  class="form-control form-control-lg"/>
+                        <img src="/<%= user.fingerprint %>" width="100" class="img-thumbnail mt-1">
+                    </div>
+                <div class="mb-3">
+                    <label for="status">Status</label>
+                    <select name="status" id="status"  class="form-control form-control-lg" value="<%= user.status %>" required>
+                        <option value="active">Active</option>
+                        <option value="inactive">InActive</option>
+                    </select>
+                </div>
+                <input type="hidden" name="old_image1" value="<%= user.document %>"/>
+                <input type="hidden" name="old_image2" value="<%= user.document %>"/>
+                <div class="mb-3 d-grid">
+                    <input type="submit" name="submit" value="Update Voter" class="btn btn-success btn-lg">
+                </div>
+                </form>
+            </div>
+           </div>
+            
+        </div>
+    </div>
+</div>
+<%- include('./includes/footer') %>
